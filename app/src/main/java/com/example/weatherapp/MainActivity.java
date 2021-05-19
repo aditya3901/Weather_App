@@ -86,6 +86,10 @@ public class MainActivity extends AppCompatActivity {
                             binding.mainContainer.setVisibility(View.VISIBLE);
                             binding.loader.setVisibility(View.GONE);
 
+                            JSONObject wind = response.getJSONObject("wind");
+                            String speed = wind.getString("speed");
+                            binding.wind.setText(speed);
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
